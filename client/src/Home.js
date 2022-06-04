@@ -1,32 +1,27 @@
-import { Drawer, Typography, Box, IconButton } from "@mui/material";
-import { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import LinkSideBar from "./LinksSideBar";
-
+import { Typography, Box, Button } from "@mui/material";
+import ProfilePicture from "/Users/abrahams/Commissions/project-template-react-rails-api/client/src/Images/Memoji-Transparent.png";
 function Home() {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
   return (
     <>
-      <Box display="flex" justifyContent="space-between" flexDirection="row">
-        {" "}
-        <IconButton onClick={() => setIsDrawerOpen(true)}>
-          <MenuIcon fontSize="large" />
-        </IconButton>
-      </Box>
-      <Box>
-        <Drawer
-          anchor="left"
-          open={isDrawerOpen}
-          onClose={() => setIsDrawerOpen(false)}
+      <Box display="flex" justifyContent="center" flexDirection="row">
+        <Box
+          sx={{
+            flexGrow: 1,
+            textAlign: "center",
+          }}
         >
-          <Box p={2} width="250px" textAlign="center" role="presentation">
-            <Typography variant="h6" component="div">
-              Side Panel
-            </Typography>
-            <LinkSideBar />
-          </Box>
-        </Drawer>
+          <Typography sx={{ paddingTop: "50%" }}>Hello! 👋 </Typography>
+          <Typography>
+            My Name is Abraham Saldivar. I am a Software Engineer living in
+            Houston, Texas.
+          </Typography>
+        </Box>
+        <img
+          src={ProfilePicture}
+          alt="Profile-Picture"
+          width="50%"
+          height="50%"
+        />
       </Box>
     </>
   );
